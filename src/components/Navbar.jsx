@@ -3,7 +3,7 @@ import { CiLight } from "react-icons/ci";
 import { MdDarkMode } from "react-icons/md";
 const Navbar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState('');
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
