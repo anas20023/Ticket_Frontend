@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import locations from "../data/location.js";
 
-const LocationSelect = () => {
+const LocationSelect = ({ onNext}) => {
     const [from, setFrom] = useState('');
     const [to, setTo] = useState('');
     const [category, setCategory] = useState('');
@@ -23,7 +24,7 @@ const LocationSelect = () => {
         }
 
         const pointDistance = Math.abs(fromLocation.point - toLocation.point);
-        const fare = category === 'Non-AC' ? pointDistance  : pointDistance * 1.5;
+        const fare = category === 'Non-AC' ? pointDistance : pointDistance * 1.5;
         setFarePs(fare);
     };
 
@@ -125,6 +126,7 @@ const LocationSelect = () => {
                 <label htmlFor="Estimated Fare Per Seat" className="text-lg">Estimated Fare</label>
                 <h2 className="font-bold text-center">${farePs} Per Seat</h2>
             </div>
+            <button className="btn btn-primary my-4" onClick={onNext}>Next Step</button>
         </>
     );
 };
